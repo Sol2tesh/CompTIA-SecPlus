@@ -1,10 +1,10 @@
 {
-  "name": "Sec+ Practice",
+  "name": "CompTIA Sec+ Practice",
   "short_name": "Sec+",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#020b1c",
-  "theme_color": "#0a1f44",
+  "background_color": "#0b58ff",
+  "theme_color": "#0b58ff",
   "icons": [
     {
       "src": "icon-192.png",
@@ -16,5 +16,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "scope": "./"
 }
