@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Video Materials</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+
+  <style>
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width:1100px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:640px){ .video-grid{ grid-template-columns:1fr; } }
+
+    .video-tile{
+      position:relative;
+      display:block;
+      height:240px;
+      border-radius:22px;
+      overflow:hidden;
+      text-decoration:none;
+      box-shadow:0 18px 45px rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.08);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .video-tile:hover{
+      transform:translateY(-4px);
+      box-shadow:0 28px 70px rgba(0,0,0,.65);
+    }
+
+    .video-tile img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .video-tile::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.15)
+      );
+      z-index:1;
+    }
+
+    .tile-body{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      padding:18px;
+      z-index:2;
+    }
+    .tile-title{
+      margin:0;
+      font-size:20px;
+      font-weight:800;
+      color:#fff;
+    }
+    .tile-sub{
+      margin-top:6px;
+      font-size:14px;
+      color:rgba(255,255,255,.85);
+    }
+  </style>
+</head>
+
+<body class="landing">
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="icon-192.png" width="40" alt="">
+      <div>
+        <div class="brand-name">CompTIA Sec+ Practice</div>
+        <div class="brand-tag">Quiz • Exam • Analytics</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+      <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+      <a class="nav-item" href="exam.html"><span class="nav-ico">⏱</span><span>Start Exam</span></a>
+      <a class="nav-item" href="practice.html#upgrade"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+      <a class="nav-item active" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="top-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+      <a class="btn ghost" href="practice.html">Sign In</a>
+    </header>
+
+    <section class="hero">
+      <h1>🎥 Video Materials</h1>
+      <p>Select a chapter to open its video folder.</p>
+
+      <div class="video-grid">
+        
+        <a class="video-tile" href="CompTIA Security+/01/002 Exam Tips.mp4">
+          <img src="video%20icon/Introduction.jpg" alt="01 - Introduction">
+          <div class="tile-body">
+            <p class="tile-title">01 - Introduction</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="CompTIA Security+/02 - Fundamentals of Security/">
+          <img src="video%20icon/Fundamentals%20of%20Security.png" alt="02 - Fundamentals of Security">
+          <div class="tile-body">
+            <p class="tile-title">02 - Fundamentals of Security</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/03%20-%20Threat%20Actors/">
+          <img src="video%20icon/Threat%20Actors.png" alt="03 - Threat Actors">
+          <div class="tile-body">
+            <p class="tile-title">03 - Threat Actors</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/04%20-%20Physical%20Security/">
+          <img src="video%20icon/Physical%20Security.png" alt="04 - Physical Security">
+          <div class="tile-body">
+            <p class="tile-title">04 - Physical Security</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/05%20-%20Social%20Engineering/">
+          <img src="video%20icon/Social%20Engineering.png" alt="05 - Social Engineering">
+          <div class="tile-body">
+            <p class="tile-title">05 - Social Engineering</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/06%20-%20Malware/">
+          <img src="video%20icon/Malware.png" alt="06 - Malware">
+          <div class="tile-body">
+            <p class="tile-title">06 - Malware</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/07%20-%20Data%20Protection/">
+          <img src="video%20icon/Data%20Protection.png" alt="07 - Data Protection">
+          <div class="tile-body">
+            <p class="tile-title">07 - Data Protection</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/08%20-%20Cryptographic%20Solutions/">
+          <img src="video%20icon/Cryptographic%20Solutions.png" alt="08 - Cryptographic Solutions">
+          <div class="tile-body">
+            <p class="tile-title">08 - Cryptographic Solutions</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/09%20-%20Risk%20Management/">
+          <img src="video%20icon/Risk%20Management.png" alt="09 - Risk Management">
+          <div class="tile-body">
+            <p class="tile-title">09 - Risk Management</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/10%20-%20Third-party%20Vendor%20Risks/">
+          <img src="video%20icon/Third-party%20Vendor%20Risks.png" alt="10 - Third-party Vendor Risks">
+          <div class="tile-body">
+            <p class="tile-title">10 - Third-party Vendor Risks</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/11%20-%20Governance%20and%20Compliance/">
+          <img src="video%20icon/Governance%20and%20Compliance.png" alt="11 - Governance and Compliance">
+          <div class="tile-body">
+            <p class="tile-title">11 - Governance and Compliance</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/12%20-%20Asset%20and%20Change%20Management/">
+          <img src="video%20icon/Asset%20and%20Change%20Management.png" alt="12 - Asset and Change Management">
+          <div class="tile-body">
+            <p class="tile-title">12 - Asset and Change Management</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/13%20-%20Audits%20and%20Assessments/">
+          <img src="video%20icon/Audits%20and%20Assessments.png" alt="13 - Audits and Assessments">
+          <div class="tile-body">
+            <p class="tile-title">13 - Audits and Assessments</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/14%20-%20Cyber%20Resilience%20and%20Redundancy/">
+          <img src="video%20icon/Cyber%20Resilience%20and%20Redundancy.png" alt="14 - Cyber Resilience and Redundancy">
+          <div class="tile-body">
+            <p class="tile-title">14 - Cyber Resilience and Redundancy</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/15%20-%20Security%20Architecture/">
+          <img src="video%20icon/Security%20Architecture.png" alt="15 - Security Architecture">
+          <div class="tile-body">
+            <p class="tile-title">15 - Security Architecture</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/16%20-%20Security%20Infrastructure/">
+          <img src="video%20icon/Security%20Infrastructure.png" alt="16 - Security Infrastructure">
+          <div class="tile-body">
+            <p class="tile-title">16 - Security Infrastructure</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/17%20-%20Identity%20and%20Access%20Management%20(IAM)%20Solutions/">
+          <img src="video%20icon/Identity%20and%20Access%20Management%20(IAM)%20Solutions.png" alt="17 - Identity and Access Management (IAM) Solutions">
+          <div class="tile-body">
+            <p class="tile-title">17 - Identity and Access Management (IAM) Solutions</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/18%20-%20Vulnerabilities%20and%20Attacks/">
+          <img src="video%20icon/Vulnerabilities%20and%20Attacks.png" alt="18 - Vulnerabilities and Attacks">
+          <div class="tile-body">
+            <p class="tile-title">18 - Vulnerabilities and Attacks</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/19%20-%20Malicious%20Activity/">
+          <img src="video%20icon/Malicious%20Activity.png" alt="19 - Malicious Activity">
+          <div class="tile-body">
+            <p class="tile-title">19 - Malicious Activity</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/20%20-%20Hardening/">
+          <img src="video%20icon/Hardening.png" alt="20 - Hardening">
+          <div class="tile-body">
+            <p class="tile-title">20 - Hardening</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/21%20-%20Security%20Techniques/">
+          <img src="video%20icon/Security%20Techniques.png" alt="21 - Security Techniques">
+          <div class="tile-body">
+            <p class="tile-title">21 - Security Techniques</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/22%20-%20Vulnerability%20Management/">
+          <img src="video%20icon/Vulnerability%20Management.png" alt="22 - Vulnerability Management">
+          <div class="tile-body">
+            <p class="tile-title">22 - Vulnerability Management</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/23%20-%20Alerting%20and%20Monitoring/">
+          <img src="video%20icon/Alerting%20and%20Monitoring.png" alt="23 - Alerting and Monitoring">
+          <div class="tile-body">
+            <p class="tile-title">23 - Alerting and Monitoring</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/24%20-%20Incident%20Response/">
+          <img src="video%20icon/Incident%20Response.png" alt="24 - Incident Response">
+          <div class="tile-body">
+            <p class="tile-title">24 - Incident Response</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/25%20-%20Investigating%20an%20Incident/">
+          <img src="video%20icon/Investigating%20an%20Incident.png" alt="25 - Investigating an Incident">
+          <div class="tile-body">
+            <p class="tile-title">25 - Investigating an Incident</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/26%20-%20Automation%20and%20Orchestration/">
+          <img src="video%20icon/Automation%20and%20Orchestration.png" alt="26 - Automation and Orchestration">
+          <div class="tile-body">
+            <p class="tile-title">26 - Automation and Orchestration</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/27%20-%20Security%20Awareness/">
+          <img src="video%20icon/Security%20Awareness.png" alt="27 - Security Awareness">
+          <div class="tile-body">
+            <p class="tile-title">27 - Security Awareness</p>
+            
+          </div>
+        </a>
+
+        <a class="video-tile" href="study/videos/28%20-%20Conclusion/">
+          <img src="video%20icon/Conclusion.png" alt="28 - Conclusion">
+          <div class="tile-body">
+            <p class="tile-title">28 - Conclusion</p>
+            
+          </div>
+        </a>
+
+      </div>
+
+      <div style="margin-top:22px">
+        <a class="btn ghost" href="study.html">← Back to Study Resources</a>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+</script>
+
+</body>
+</html>

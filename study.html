@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Study Resources</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body class="landing">
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="icon-192.png" width="40" />
+      <div>
+        <div class="brand-name">CompTIA Sec+ Practice</div>
+        <div class="brand-tag">Quiz • Exam • Analytics</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+      <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+      <a class="nav-item" href="exam.html"><span class="nav-ico">📊</span><span>⏱ Start Exam</span></a>
+      <a class="nav-item" href="practice.html#upgrade"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+      <a class="nav-item active" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+    </nav>
+  </aside>
+
+  <main class="main">
+ <header class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+        <a class="btn ghost" href="practice.html">Sign In</a>
+      </header>
+
+    <section class="hero">
+      <h1>📚 Study Resources</h1>
+      <p>Select the type of material you want to study.</p>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="CompTIA Security+ Study Guide.pdf">📄 PDF Materials</a>
+        <a class="btn subtle" href="videos.html">🎥 Video Materials</a>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+</script>
+
+</body>
+</html>
