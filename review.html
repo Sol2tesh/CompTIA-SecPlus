@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Review Mistakes • CompTIA Sec+ Practice</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body class="landing">
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="icon-192.png" alt="" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">CompTIA Sec+ Practice</div>
+          <div class="brand-tag">Quiz mode • Exam mode • Analytics</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+        <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+        <a class="nav-item" href="exam.html"><span class="nav-ico">⏱</span><span>Start Exam</span></a>
+        <a class="nav-item" href="progress.html"><span class="nav-ico">📊</span><span>Progress</span></a>
+        <a class="nav-item active" href="review.html"><span class="nav-ico">❌</span><span>Review Mistakes</span></a>
+        <a class="nav-item" href="practice.html#upgrade"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+        <a class="nav-item" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="pill">Offline-ready PWA</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+        <a class="btn ghost" href="practice.html">Sign In</a>
+      </header>
+
+      <section class="hero">
+        <h1>❌ Review Mistakes</h1>
+        <p>See every question you answered wrong, with the correct answer and explanation.</p>
+
+        <div class="hero-cta" style="margin-top:14px">
+          <input id="searchBox" class="input" placeholder="Search mistakes…" style="min-width:260px; max-width:420px;">
+          <button class="btn subtle" id="btnOnlyBookmarked" type="button">Only Bookmarked</button>
+          <button class="btn ghost" id="btnClearWrong" type="button">Clear Mistakes</button>
+        </div>
+
+        <div class="hero-badges" style="margin-top:12px">
+          <span class="badge">Wrong saved: <strong id="wrongCount">0</strong></span>
+          <span class="badge">Showing: <strong id="showingCount">0</strong></span>
+        </div>
+      </section>
+
+      <section class="feature-grid" aria-label="Mistakes list" style="grid-template-columns: 1fr;">
+        <article class="card">
+          <div id="emptyState" style="display:none; opacity:.8;">
+            No mistakes yet. Answer some questions in Practice/Exam and they’ll show up here.
+          </div>
+          <div id="mistakeList" style="display:grid; gap:12px;"></div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <a href="practice.html">Practice</a>
+          <span class="dot">•</span>
+          <a href="progress.html">Progress</a>
+        </div>
+        <div class="footer-copy">Mistakes are stored locally on your device.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="review.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>
