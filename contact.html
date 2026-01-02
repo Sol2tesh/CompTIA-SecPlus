@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact • CompTIA Sec+ Practice</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+  <style>
+    .content-card{
+      margin-top:14px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .content-card h2{ margin-top:0; }
+    .content-card p, .content-card li{ opacity:.9; line-height:1.55; }
+    .content-card a{ color:inherit; }
+    .field{ display:grid; gap:8px; margin-top:10px; }
+    .field input, .field textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
+      color:rgba(255,255,255,.92);
+      outline:none;
+    }
+    .field textarea{ min-height:120px; resize:vertical; }
+    .small{ font-size:14px; opacity:.75; }
+  </style>
+
+</head>
+<body class="landing">
+  <div class="app-shell">
+
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="icon-192.png" alt="" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">CompTIA Sec+ Practice</div>
+          <div class="brand-tag">Quiz mode • Exam mode • Analytics</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+        <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+        <a class="nav-item" href="exam.html"><span class="nav-ico">⏱</span><span>Start Exam</span></a>
+        <a class="nav-item" href="progress.html"><span class="nav-ico">📊</span><span>Progress</span></a>
+        <a class="nav-item" href="review.html"><span class="nav-ico">❌</span><span>Review Mistakes</span></a>
+        <a class="nav-item" href="upgrade.html"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+        <a class="nav-item" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="pill">Offline-ready PWA</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+        <a class="btn ghost" href="practice.html">Sign In</a>
+      </header>
+
+      <section class="hero">
+        <h1>Contact</h1>
+        <p>Questions or feedback? Send us a message.</p>
+
+        <div class="content-card">
+          
+<h2>Get in touch</h2>
+<p>If you have questions, feedback, or want to report an issue, send us a message.</p>
+
+<form id="contactForm">
+  <div class="field">
+    <label for="name">Name</label>
+    <input id="name" name="name" autocomplete="name" placeholder="Your name" />
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="How can we help?"></textarea>
+  </div>
+
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+    <button class="btn primary" type="submit">Send</button>
+    <a class="btn subtle" href="index.html">Back to Home</a>
+  </div>
+
+  <p class="small" style="margin-top:10px;">
+    Note: This is a static PWA. To actually send email, connect this form to a service (Formspree / Netlify Forms)
+    or replace it with a mailto link.
+  </p>
+</form>
+
+<script>
+  // Simple fallback: open user's email app if you haven't connected a form service.
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name')?.value || '';
+    const email = document.getElementById('email')?.value || '';
+    const msg = document.getElementById('message')?.value || '';
+    const subject = encodeURIComponent('Sec+ Practice Support');
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+    // TODO: replace support@example.com with your real support email
+    window.location.href = 'mailto:support@example.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <span class="dot">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="dot">•</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-copy">© 2026 Solomon Cyber Practice. All rights reserved.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>

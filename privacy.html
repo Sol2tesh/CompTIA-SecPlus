@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy • CompTIA Sec+ Practice</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+  <style>
+    .content-card{
+      margin-top:14px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .content-card h2{ margin-top:0; }
+    .content-card p, .content-card li{ opacity:.9; line-height:1.55; }
+    .content-card a{ color:inherit; }
+    .field{ display:grid; gap:8px; margin-top:10px; }
+    .field input, .field textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
+      color:rgba(255,255,255,.92);
+      outline:none;
+    }
+    .field textarea{ min-height:120px; resize:vertical; }
+    .small{ font-size:14px; opacity:.75; }
+  </style>
+
+</head>
+<body class="landing">
+  <div class="app-shell">
+
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="icon-192.png" alt="" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">CompTIA Sec+ Practice</div>
+          <div class="brand-tag">Quiz mode • Exam mode • Analytics</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+        <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+        <a class="nav-item" href="exam.html"><span class="nav-ico">⏱</span><span>Start Exam</span></a>
+        <a class="nav-item" href="progress.html"><span class="nav-ico">📊</span><span>Progress</span></a>
+        <a class="nav-item" href="review.html"><span class="nav-ico">❌</span><span>Review Mistakes</span></a>
+        <a class="nav-item" href="upgrade.html"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+        <a class="nav-item" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="pill">Offline-ready PWA</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+        <a class="btn ghost" href="practice.html">Sign In</a>
+      </header>
+
+      <section class="hero">
+        <h1>Privacy Policy</h1>
+        <p>How we handle your data.</p>
+
+        <div class="content-card">
+          
+<h2>Privacy Policy</h2>
+<p><strong>Summary:</strong> This app stores your progress locally on your device. We do not collect or transmit personal data by default.</p>
+
+<h3>What we store</h3>
+<ul>
+  <li><strong>Local progress</strong>: answered questions, bookmarks, and your accuracy (stored in your browser/PWA storage).</li>
+  <li><strong>Settings</strong>: theme preference (dark/light) if enabled.</li>
+</ul>
+
+<h3>What we do not collect</h3>
+<ul>
+  <li>No account data (unless you add sign-in later).</li>
+  <li>No analytics tracking by default.</li>
+  <li>No sale of personal data.</li>
+</ul>
+
+<h3>Offline use</h3>
+<p>This app can work offline using a Service Worker. Files may be cached on your device to enable offline access.</p>
+
+<h3>Contact</h3>
+<p>If you have privacy questions, contact us via the <a href="contact.html">Contact</a> page.</p>
+
+<p class="small">Last updated: 2026-01-02 (edit this date when you change the policy).</p>
+
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <span class="dot">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="dot">•</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer-copy">© 2026 Solomon Cyber Practice. All rights reserved.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>
