@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Upgrade • CompTIA Sec+ Practice</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+
+  <style>
+    .plans{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:14px; }
+    @media (max-width:1100px){ .plans{ grid-template-columns:1fr; } }
+
+    .plan{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(255,255,255,.04);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .plan h3{ margin:0 0 6px 0; }
+    .price{ font-size:26px; font-weight:800; margin:8px 0; }
+    .muted{ opacity:.8; }
+
+    /* ✅ Bullet points removed */
+    .plan .list{
+      list-style:none;
+      padding-left:0;
+      margin-top:10px;
+      opacity:.92;
+    }
+    .plan .list li{
+      padding-left:0;
+      margin-bottom:6px;
+    }
+
+    .pill-ok{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(11,88,255,.18);
+      margin-top:10px;
+    }
+
+    .unlock{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+      align-items:center;
+    }
+
+    .unlock input{
+      min-width:260px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
+      color:rgba(255,255,255,.92);
+      outline:none;
+    }
+
+    .note{
+      opacity:.75;
+      font-size:14px;
+      margin-top:10px;
+      line-height:1.4;
+    }
+  </style>
+</head>
+
+<body class="landing">
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="icon-192.png" width="40" alt="">
+      <div>
+        <div class="brand-name">CompTIA Sec+ Practice</div>
+        <div class="brand-tag">Quiz • Exam • Analytics</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-item" href="index.html">🏠 Home</a>
+      <a class="nav-item" href="practice.html">📝 Start Practice</a>
+      <a class="nav-item" href="exam.html">⏱ Start Exam</a>
+      <a class="nav-item" href="progress.html">📊 Progress</a>
+      <a class="nav-item" href="review.html">❌ Review Mistakes</a>
+      <a class="nav-item active" href="upgrade.html">💎 Upgrade</a>
+      <a class="nav-item" href="study.html">📚 Study Resources</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section class="hero">
+      <h1>💎 Upgrade</h1>
+      <p>Unlock premium features and study faster.</p>
+
+      <div id="premiumBadge" class="pill-ok" style="display:none;">
+        ✅ Premium enabled on this device
+      </div>
+
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0</div>
+          <div class="muted">Great for getting started.</div>
+          <ul class="list">
+            <li>Practice mode</li>
+            <li>Exam simulations</li>
+            <li>Progress & review mistakes</li>
+          </ul>
+          <a class="btn subtle" href="practice.html">Continue Free →</a>
+        </div>
+
+        <div class="plan" style="border-color:rgba(11,88,255,.35); background:rgba(11,88,255,.08);">
+          <h3>Pro</h3>
+          <div class="price">$9.99 / month</div>
+          <div class="muted">Best for serious daily study.</div>
+          <ul class="list">
+            <li>Everything in Free</li>
+            <li>Unlimited review sessions</li>
+            <li>Advanced analytics (coming)</li>
+            <li>Priority updates</li>
+          </ul>
+          <a class="btn primary" href="#">Buy Pro</a>
+        </div>
+
+        <div class="plan">
+          <h3>Lifetime</h3>
+          <div class="price">$49 one-time</div>
+          <div class="muted">Pay once, keep forever.</div>
+          <ul class="list">
+            <li>Everything in Pro</li>
+            <li>Lifetime access</li>
+            <li>Future content included</li>
+          </ul>
+          <a class="btn subtle" href="#">Buy Lifetime</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="upgrade.js"></script>
+</body>
+</html>
