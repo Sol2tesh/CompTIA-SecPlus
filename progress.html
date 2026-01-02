@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Progress • CompTIA Sec+ Practice</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b58ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+
+  <!-- Styles (same layer/theme) -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+
+<body class="landing">
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="icon-192.png" alt="" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">CompTIA Sec+ Practice</div>
+          <div class="brand-tag">Quiz mode • Exam mode • Analytics</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" href="index.html"><span class="nav-ico">🏠</span><span>Home</span></a>
+        <a class="nav-item" href="practice.html"><span class="nav-ico">📝</span><span>Start Practice</span></a>
+        <a class="nav-item" href="exam.html"><span class="nav-ico">⏱</span><span>Start Exam</span></a>
+        <a class="nav-item active" href="progress.html"><span class="nav-ico">📊</span><span>Progress</span></a>
+        <a class="nav-item" href="practice.html#review"><span class="nav-ico">❌</span><span>Review Mistakes</span></a>
+        <a class="nav-item" href="practice.html#upgrade"><span class="nav-ico">💎</span><span>Upgrade</span></a>
+        <a class="nav-item" href="study.html"><span class="nav-ico">📚</span><span>Study Resources</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="pill">Offline-ready PWA</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌞</button>
+        <a class="btn ghost" href="practice.html">Sign In</a>
+      </header>
+
+      <section class="hero">
+        <h1>📊 Progress</h1>
+        <p>Your stats, simulator performance, and quick actions.</p>
+
+        <div class="hero-badges">
+          <span class="badge">Attempted: <strong id="pAttempted">0</strong></span>
+          <span class="badge">Correct: <strong id="pCorrect">0</strong></span>
+          <span class="badge">Accuracy: <strong id="pAccuracy">0%</strong></span>
+          <span class="badge">Bookmarks: <strong id="pBookmarks">0</strong></span>
+          <span class="badge">Wrong: <strong id="pWrong">0</strong></span>
+        </div>
+
+        <div class="hero-cta" style="margin-top:14px">
+          <button class="btn primary" id="btnExport" type="button">Export Progress</button>
+          <label class="btn subtle" for="importFile" style="cursor:pointer">Import Progress</label>
+          <input id="importFile" type="file" accept="application/json" hidden>
+          <button class="btn ghost" id="btnReset" type="button">Reset Progress</button>
+        </div>
+      </section>
+
+      <section class="feature-grid" aria-label="Analytics">
+        <article class="card">
+          <div class="card-ico">🎯</div>
+          <h3>Exam simulator performance</h3>
+          <p>Accuracy by simulator range (based on question IDs).</p>
+          <div id="simTableWrap" style="margin-top:10px; overflow:auto;"></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico">🧠</div>
+          <h3>Weak areas</h3>
+          <p id="weakHint">We’ll show weakest domains/topics when your question data includes them.</p>
+          <div id="weakWrap" style="margin-top:10px;"></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico">📌</div>
+          <h3>Quick actions</h3>
+          <p>Jump back into practice using your progress.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+            <a class="btn subtle" href="practice.html">Continue Practice</a>
+            <a class="btn subtle" href="practice.html#review">Review Mistakes</a>
+            <a class="btn subtle" href="exam.html">Start Exam</a>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <a href="study.html">Study</a>
+          <span class="dot">•</span>
+          <a href="index.html">Home</a>
+        </div>
+        <div class="footer-copy">Progress is stored locally on your device.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="progress.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>
